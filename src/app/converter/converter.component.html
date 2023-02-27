@@ -1,0 +1,23 @@
+<form [formGroup]="formConverterCurrency">
+  <div class="converter-container">
+    <h1>Currency Converter</h1>
+    <div class="converter-inputs">
+      <ng-select class="custom" formControlName="currency1" [clearable]="false">
+        <ng-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</ng-option>
+      </ng-select>
+      <input type="number" id="input1" class="input-field" formControlName="valueCurrency1">
+    </div>
+
+    <div class="converter-button">
+        <img id="exchange-button" src="assets/swap.png" alt="swap" (click)="changeCurrency()">
+    </div>
+
+    <div class="converter-inputs">
+      <ng-select class="custom" formControlName="currency2" [clearable]="false">
+        <ng-option *ngFor="let currency of currencies" [value]="currency">{{currency}}</ng-option>
+      </ng-select>
+      <input type="number" id="input2" class="input-field" formControlName="valueCurrency2">
+    </div>
+  </div>
+
+</form>

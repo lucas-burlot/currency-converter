@@ -29,6 +29,7 @@ export class ConverterComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    // Consomme l'API à chaque changement de valeur
     this.f['valueCurrency1'].valueChanges.subscribe((value) => {
       if(value !== '' && value !== null && this.f.currency1 !== null && this.f.currency2 !== null) {
         this.converterService.getCurrencyValue(this.f.currency1.value, this.f.currency2.value, value).subscribe((data) => {
@@ -39,8 +40,6 @@ export class ConverterComponent implements OnInit{
       }
     });
   }
-
-  // Consomme l'API à chaque changement de valeur
   convertCurrency(value: string | null) {
     if(value !== '') {
       this.converterService.getCurrencyValue(this.f['currency1'].value, this.f['currency2'].value, value).subscribe((data) => {

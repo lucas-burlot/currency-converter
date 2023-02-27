@@ -44,11 +44,11 @@ export class ConverterComponent implements OnInit{
   }
   convertCurrency(value: string | null) {
     if(value !== '') {
-      this.converterService.getCurrencyValue(this.f['currency1'].value, this.f['currency2'].value, value).subscribe((data) => {
-        this.f['valueCurrency2'].setValue(data.new_amount);
+      this.converterService.getCurrencyValue(this.f.currency1.value, this.f.currency2.value, value).subscribe((data) => {
+        this.f.valueCurrency2.setValue(data.new_amount);
       });
     }else{
-      this.f['valueCurrency2'].setValue('');
+      this.f.valueCurrency2.setValue('');
     }
   }
 
